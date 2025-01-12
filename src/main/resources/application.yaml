@@ -1,3 +1,21 @@
 spring:
-  application:
-    name: camunda-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/camunda
+    username: postgres  # Tu usuario de PostgreSQL
+    password: sa  # Tu contraseña de PostgreSQL
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgresSQLDialect
+
+camunda:
+  bpm:
+    admin-user:
+      id: admin
+      password: admin
+    filter:
+      create: All Tasks
+    history-level: full
