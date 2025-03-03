@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-archive xmlns="http://www.camunda.org/schema/1.0/ProcessEngineConfiguration">
+
+    <!-- Nombre del archivo BPMN a desplegar -->
+    <process-engine>proceso_v1</process-engine>
+
+    <!-- Reglas de despliegue -->
+    <properties>
+        <!-- Si el proceso ya está desplegado, ignóralo -->
+        <property name="isDeployChangedOnly">true</property>
+
+        <!-- No desplegar procesos si ya existen en la base de datos -->
+        <property name="isResumePreviousVersions">true</property>
+
+        <!-- Si la versión cambia, hacer upgrade en caliente -->
+        <property name="isDuplicateFilterEnabled">true</property>
+
+        <!-- (Opcional) Evitar que Camunda limpie procesos en cada reinicio -->
+        <!-- <property name="deploymentLockWaitTime">10000</property >-->
+    </properties>
+
+</process-archive>

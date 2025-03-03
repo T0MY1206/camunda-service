@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=camunda
+    username: postgres
+    password: sa
+
+server:
+  port: 80
+
+camunda:
+  bpm:
+    auto-deployment-enabled: true # Habilita la carga automática de BPMN
+    database:
+      schema-update: true
+    history-level: full
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    urls:
+      - name: Camunda API
+        url: /openapi.json
+    operationsSorter: method
+  packages-to-scan: com.tuempresa.controllers
+  paths-to-match: "/camunda/**"

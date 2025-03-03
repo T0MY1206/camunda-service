@@ -9,5 +9,4 @@ public class CamundaServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CamundaServiceApplication.class, args);
 	}
-
 }
